@@ -19,8 +19,8 @@ def click_event2(event, x, y, flags, params):
         cv2.imshow('image', img2)
 
 if __name__ == "__main__":
-    img1 = cv2.imread('img1.jpg')
-    img2 = cv2.imread('img2.jpg')
+    img1 = cv2.imread('./images/Qa/img1.jpg')
+    img2 = cv2.imread('./images/Qa/img2.jpg')
     width = 500
     height = 500
     dim = (width, height)

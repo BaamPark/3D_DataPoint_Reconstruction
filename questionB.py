@@ -13,7 +13,7 @@ objp[:,:2] = np.mgrid[0:pattern_size[0],0:pattern_size[1]].T.reshape(-1,2)
 objPoints = [] # 3d points
 imgPoints = [] # 2d points
 
-images = glob.glob('./images/*.jpg')
+images = glob.glob('./images/Qb/*.jpg')
 
 for image in images:
     print(image)
