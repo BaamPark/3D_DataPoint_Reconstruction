@@ -5,7 +5,7 @@ import glob
 
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
 
-pattern_size = (6,8)
+pattern_size = (6,8) #check boardsize
 
 objp = np.zeros(( pattern_size[0]*pattern_size[1],3), np.float32)
 objp[:,:2] = np.mgrid[0:pattern_size[0],0:pattern_size[1]].T.reshape(-1,2)
