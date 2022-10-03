@@ -58,7 +58,6 @@ cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 
-print(points_img1)
 points_img1_container = []
 for point in points_img1:
     point = np.array(point)
@@ -76,10 +75,6 @@ for point in points_img2:
 points_img2_container = np.array(points_img2_container)
 
 
-    # points_img1container = np.append(point, [1], axis=1)
-
-p1 = np.array([[307], [245], [1]])
-p2 = np.array([[342], [247], [1]])
 
 r = np.identity(3)
 t = np.zeros((3,1))
@@ -96,48 +91,24 @@ translation =  np.array([[ 0.07972497],
 
 projection_matrix_img2 = np.append(rotation, translation, axis=1)
 
-# print(projection_matrix_img1)
-# print(projection_matrix_img2)
 x_list = []
 y_list = []
 z_list = []
 
 
-
-for i in range(2):
+for i in range(8):
     reval = linear_triangulation(points_img1_container[i], points_img2_container[i], projection_matrix_img1, projection_matrix_img2)
     x_list.append(reval[0][0])
     y_list.append(reval[1][0])
     z_list.append(reval[2][0])
-    print(reval.shape)
-    print(reval)
-
-
-# reval_list = np.array(reval_list)
-# print(reval_list)
-# print(reval_list.shape)
-
-# for i in range(2):
-#     x_list.append[i][0][0]
-#     y_list.append[i][1][0]
-#     z_list.append[i][2][0]
-
-print(x_list)
-# reval = linear_triangulation(p1, p2, projection_matrix_img1, projection_matrix_img2)
-# print(reval)
 
 plt.rcParams["figure.figsize"] = [7.00, 3.50]
 plt.rcParams["figure.autolayout"] = True
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
-# x = reval[0][0]
-# y = reval[1][0]
-# z = reval[2][0]
 x = x_list
 y = y_list
 z = z_list
 ax.scatter(x, y, z, c=z, alpha=1)
 plt.show()
-
-# print(reval)
