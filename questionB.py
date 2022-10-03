@@ -1,6 +1,5 @@
 import cv2
 import numpy as np
-import os
 import glob
 
 criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
@@ -42,11 +41,8 @@ cv2.destroyAllWindows()
 
 ret, mtx, dist, rvecs, tvecs = cv2.calibrateCamera(objPoints, imgPoints, gray.shape[::-1], None, None)
 
-print("Camera Calibrated: ", ret)
-print("\nCamera Matrix: \n", mtx)
-print("\nDistortion Parameters: ", dist)
-print("\nRotation Vectors:\n", rvecs)
-print("\nTranslation Vectors:\n", tvecs)
+print("Intrinsic Matrix: \n", mtx)
+
 
 
 
