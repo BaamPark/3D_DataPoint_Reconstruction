@@ -39,24 +39,14 @@ cv2.imshow('img2', img2)
 cv2.setMouseCallback('img1', click_event1)
 cv2.setMouseCallback('img2', click_event2)
 
-
 cv2.waitKey(0)
 cv2.destroyAllWindows()
 
 points1 = np.array(points_img1)
 points2 = np.array(points_img2)
 
-criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 30, 0.001)
-
-pattern_size = (6,8) #check boardsize
-
-objp = np.zeros(( pattern_size[0]*pattern_size[1],3), np.float32)
-objp[:,:2] = np.mgrid[0:pattern_size[0],0:pattern_size[1]].T.reshape(-1,2)
-
 objPoints = [] # 3d points
 imgPoints = [] # 2d points
-
-images = glob.glob('./images/Qb/*.jpg')
 
 #the below intrinsic matrix can be found questionB.py output
 intrinsic_mtx = np.array([[887.68446239, 0, 444.96221361],
