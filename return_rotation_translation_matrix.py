@@ -1,3 +1,4 @@
+#Recover rotation matrix and translation matrix
 import cv2
 import glob
 import numpy as np
