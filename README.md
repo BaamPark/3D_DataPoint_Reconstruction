@@ -10,3 +10,5 @@ The repository contains the following files:
 2. `return_rotation_translation_matrix.py`: Estimates the essential matrix using the 8-point algorithm and recovers the rotation and translation matrices.
 3. `recontruct_3d_point.pyy`: Finds the 3D locations of points and displays the 3D point cloud.
 
+## Results
+<img width="485" alt="image" src="https://user-images.githubusercontent.com/84463907/225543485-96fc3cd4-b22b-4cce-924f-c1ce75eeff54.png">
